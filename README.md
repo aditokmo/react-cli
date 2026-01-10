@@ -9,7 +9,7 @@ A React CLI tool that helps you build and structure your projects in seconds, wi
 | Category | Options |
 | :--- | :--- |
 | **Styling** | Tailwind CSS, SCSS, Standard CSS |
-| **UI Components** | shadcn |
+| **UI Components** | Shadcn |
 | **Routing** | React Router, TanStack Router (soon) |
 | **Data Fetching** | TanStack Query (React Query) |
 | **State Management** | Zustand (soon), Redux (soon) |
@@ -48,7 +48,7 @@ react-cli
 ```
 
 
-## 📂 Project Structure
+## Project Structure
 
 * `cli/` - Logic for the CLI.
 * `templates/` - Pre-defined boilerplates and configurations.
