@@ -22,7 +22,7 @@ To do your own changes and use this CLI locally:
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/aditokmo/react-cli.git](https://github.com/aditokmo/react-cli.git)
+   git clone https://github.com/aditokmo/react-cli.git
    cd react-cli
 
 2. **Install dependencies:**
