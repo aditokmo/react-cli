@@ -1,5 +1,5 @@
 import { group, text, select, confirm, isCancel, cancel } from '@clack/prompts';
-import { Answers, RouterOption, StyleOption } from './types';
+import { Answers, RouterOption, StyleOption } from './types.js';
 
 export async function askQuestions(): Promise<Answers> {
     const results = await group(

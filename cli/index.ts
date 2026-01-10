@@ -1,10 +1,14 @@
 import fs from 'fs-extra';
 import path from 'path';
 import { execSync } from 'child_process';
-import { askQuestions } from './questions';
-import { copyTemplate, patchViteConfig, finalizeViteConfig, patchAppFile, finalizeAppFile } from './utils';
-import { collectDependencies } from './installers';
-import { Answers } from './types';
+import { askQuestions } from './questions.js';
+import { copyTemplate, patchViteConfig, finalizeViteConfig, patchAppFile, finalizeAppFile } from './utils.js';
+import { collectDependencies } from './installers.js';
+import { Answers } from './types.js';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 async function main() {
     console.log('⚛️ Welcome to React CLI by github/aditokmo');

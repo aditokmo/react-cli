@@ -1,5 +1,5 @@
-import { reactQueryInstaller, reactRouterInstaller, shadcnInstaller, tailwindInstaller } from './packages';
-import { Answers } from './types';
+import { reactQueryInstaller, reactRouterInstaller, shadcnInstaller, tailwindInstaller } from './packages.js';
+import { Answers } from './types.js';
 
 export function collectDependencies(answers: Answers) {
     const dependency = new Set<string>();
