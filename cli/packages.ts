@@ -7,18 +7,28 @@ export const reactQueryInstaller = {
 // Styles
 export const tailwindInstaller = {
     dependency: ['tailwindcss', '@tailwindcss/vite'],
-    devDependency: [],
 };
 
 // Icons
 export const reactIconsInstaller = {
     dependency: ['react-icons'],
-    devDependency: [],
 }
 
 export const fontAwesomeIconsInstaller = {
     dependency: ['@fortawesome/fontawesome-svg-core', '@fortawesome/react-fontawesome', '@fortawesome/free-solid-svg-icons', '@fortawesome/free-regular-svg-icons', '@fortawesome/free-brands-svg-icons'],
-    devDependency: [],
+}
+
+// Toast
+export const reactHotToastInstaller = {
+    dependency: ['react-hot-toast'],
+}
+
+export const reactToastifyInstaller = {
+    dependency: ['react-toastify'],
+}
+
+export const sonnerInstaller = {
+    dependency: ['sonner'],
 }
 
 // UI Libs
@@ -29,5 +39,4 @@ export const shadcnInstaller = {
 // Routers
 export const reactRouterInstaller = {
     dependency: ['react-router', 'react-router-dom'],
-    devDependency: []
 };

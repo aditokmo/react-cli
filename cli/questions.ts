@@ -1,5 +1,5 @@
 import { group, text, select, confirm, isCancel, cancel } from '@clack/prompts';
-import { Answers, IconOption, RouterOption, StyleOption } from './types.js';
+import { Answers, IconOption, RouterOption, StyleOption, ToastOption } from './types.js';
 
 export async function askQuestions(): Promise<Answers> {
     const results = await group(
@@ -28,6 +28,15 @@ export async function askQuestions(): Promise<Answers> {
                 options: [
                     { value: 'react-icons', label: 'React Icons' },
                     { value: 'font-awesome', label: 'Font Awesome' },
+                ]
+            }),
+
+            toast: () => select<ToastOption>({
+                message: 'Choose toast library:',
+                options: [
+                    { value: 'react-hot-toast', label: 'React Hot Toast' },
+                    { value: 'react-toastify', label: 'React Toastify' },
+                    { value: 'sonner', label: 'Sonner' },
                 ]
             }),
 
