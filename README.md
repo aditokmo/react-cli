@@ -16,7 +16,7 @@ A React CLI tool that helps you build and structure your projects in seconds, wi
 | :--- | :--- |
 | **Folder Structure** | Feature-based |
 | **Routing** | React Router, TanStack Router (soon) |
-| **Data Fetching** | TanStack Query (React Query) |
+| **Data Fetching** | TanStack Query (React Query), Axios |
 | **State Management** | Zustand (soon) |
 | **Styling** | CSS, SCSS, Tailwind CSS |
 | **UI Components** | Shadcn |
