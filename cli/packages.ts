@@ -41,6 +41,16 @@ export const reactRouterInstaller = {
     dependency: ['react-router', 'react-router-dom'],
 };
 
+// Forms
+export const reactFormHookInstaller = {
+    dependency: ['react-hook-form'],
+}
+
+// Schemas
+export const zodInstaller = {
+    dependency: ['zod', '@hookform/resolvers'],
+}
+
 // Base installation
 export const axiosInstaller = {
     dependency: ['axios'],

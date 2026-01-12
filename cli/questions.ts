@@ -1,5 +1,5 @@
 import { group, text, select, confirm, isCancel, cancel } from '@clack/prompts';
-import { Answers, IconOption, RouterOption, StyleOption, ToastOption } from './types.js';
+import { Answers, FormOption, IconOption, RouterOption, SchemaOption, StyleOption, ToastOption } from './types.js';
 
 export async function askQuestions(): Promise<Answers> {
     const results = await group(
@@ -44,8 +44,24 @@ export async function askQuestions(): Promise<Answers> {
                 message: 'Choose router:',
                 options: [
                     { value: 'react-router', label: 'React Router' },
-                    { value: 'tanstack-router', label: 'Tanstack Router' },
+                    //{ value: 'tanstack-router', label: 'Tanstack Router' },
                 ],
+            }),
+
+            form: () => select<FormOption>({
+                message: 'Choose form library:',
+                options: [
+                    { value: 'react-hook-form', label: 'React Hook Form' },
+                    //{ value: 'tanstack-form', label: 'TanStack Form' },
+                ],
+            }),
+
+            schema: () => select<SchemaOption>({
+                message: 'Choose schema library:',
+                options: [
+                    { value: 'zod', label: 'Zod' },
+                    //{ value: 'yup', label: 'Yup' },
+                ]
             }),
 
             reactQuery: () => confirm({ message: 'Include React Query?' }),
