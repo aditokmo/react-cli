@@ -1,5 +1,5 @@
 import { group, text, select, confirm, isCancel, cancel } from '@clack/prompts';
-import { Answers, FormOption, IconOption, RouterOption, SchemaOption, StyleOption, ToastOption } from './types.js';
+import { Answers, FormOption, GlobalStateOption, IconOption, RouterOption, SchemaOption, StyleOption, ToastOption } from './types.js';
 
 export async function askQuestions(): Promise<Answers> {
     const results = await group(
@@ -61,6 +61,13 @@ export async function askQuestions(): Promise<Answers> {
                 options: [
                     { value: 'zod', label: 'Zod' },
                     { value: 'yup', label: 'Yup' },
+                ]
+            }),
+
+            globalState: () => select<GlobalStateOption>({
+                message: 'Choose global state management library:',
+                options: [
+                    { value: 'zustand', label: 'Zustand' },
                 ]
             }),
 

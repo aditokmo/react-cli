@@ -4,6 +4,7 @@ export type IconOption = 'react-icons' | 'font-awesome';
 export type ToastOption = 'react-hot-toast' | 'react-toastify' | 'sonner';
 export type FormOption = 'react-hook-form' | 'tanstack-form';
 export type SchemaOption = 'zod' | 'yup';
+export type GlobalStateOption = 'zustand';
 
 export interface PackageInstaller {
     dependency?: string[];
@@ -21,4 +22,5 @@ export interface Answers {
     toast: ToastOption;
     form: FormOption
     schema: SchemaOption;
+    globalState: GlobalStateOption;
 }

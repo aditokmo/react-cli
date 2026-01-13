@@ -4,6 +4,11 @@ export const reactQueryInstaller = {
     devDependency: ['@tanstack/react-query-devtools']
 };
 
+// Global State Management
+export const zustandInstaller = {
+    dependency: ['zustand'],
+}
+
 // Styles
 export const tailwindInstaller = {
     dependency: ['tailwindcss', '@tailwindcss/vite'],

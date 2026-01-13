@@ -1,9 +1,9 @@
-import { fontAwesomeIconsInstaller, reactFormHookInstaller, reactHotToastInstaller, reactIconsInstaller, reactQueryInstaller, reactRouterInstaller, reactToastifyInstaller, shadcnInstaller, sonnerInstaller, tailwindInstaller, tanstackFormInstaller, yupInstaller, zodInstaller } from './packages.js';
+import { fontAwesomeIconsInstaller, reactFormHookInstaller, reactHotToastInstaller, reactIconsInstaller, reactQueryInstaller, reactRouterInstaller, reactToastifyInstaller, shadcnInstaller, sonnerInstaller, tailwindInstaller, tanstackFormInstaller, yupInstaller, zodInstaller, zustandInstaller } from './packages.js';
 import { PackageInstaller } from './types.js';
 
 export const installers: Record<string, PackageInstaller> = {
     'reactQuery': reactQueryInstaller,
-    //'zustand': zustandInstaller,
+    'zustand': zustandInstaller,
     'react-router': reactRouterInstaller,
     //'tanstack-router': tanstackRouterInstaller,
     'tailwind': tailwindInstaller,

@@ -66,6 +66,13 @@ async function main() {
             );
         }
 
+        if (answers.globalState === 'zustand') {
+            copyTemplate(
+                path.join(templateRoot, 'state', 'zustand', 'src'),
+                path.join(projectDir, 'src/store')
+            )
+        }
+
         // Router
         if (answers.router === 'react-router') {
             copyTemplate(
