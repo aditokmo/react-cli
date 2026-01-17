@@ -4,6 +4,8 @@
 
 A React CLI built with Vite that helps you build and structure your projects in seconds. It eliminates manual setup by configuring your favorite tools into a **clean, modular architecture** automatically.
 
+**Note:** This package is a CLI tool. Do not install it via `npm i`. Instead check usage down below.
+
 ## What it does
 
 * **Automated Installation:** Installs all selected libraries (listed below) for you.
@@ -12,7 +14,7 @@ A React CLI built with Vite that helps you build and structure your projects in 
 
 ---
 
-##  Usage
+## Usage
 
 Run the following command in your terminal to start CLI
 
