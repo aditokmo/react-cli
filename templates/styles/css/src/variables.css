@@ -1,0 +1,15 @@
+:root {
+  --primary-blue: #37538a;
+  --primary-blue-hover: #263c67;
+  --bg-light: #e6edfc;
+  --white: #ffffff;
+  --text-dark: #111111;
+  --text-muted: #666666;
+
+  --font-main: "Arial", sans-serif;
+
+  --shadow-main: 0px 0px 14px -14px rgba(0, 0, 0, 0.75);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+}

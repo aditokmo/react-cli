@@ -1,4 +1,4 @@
-export type StyleOption = 'tailwind' | 'css';
+export type StyleOption = 'tailwind' | 'css' | 'scss';
 export type RouterOption = 'react-router' | 'tanstack-router';
 export type IconOption = 'react-icons' | 'font-awesome' | 'phosphor-icons';
 export type ToastOption = 'react-hot-toast' | 'react-toastify' | 'sonner';
@@ -6,6 +6,7 @@ export type FormOption = 'react-hook-form' | 'tanstack-form';
 export type SchemaOption = 'zod' | 'yup';
 export type GlobalStateOption = 'zustand';
 export type ShadcnComponents = 'button' | 'input' | 'card' | 'dialog' | 'sheet' | 'dropdown-menu' | 'table' | 'checkbox' | 'avatar' | 'badge';
+export type Fonts = 'geist' | 'inter' | 'lato' | 'montserrat' | 'open-sans' | 'poppins' | 'roboto';
 
 export interface PackageInstaller {
     dependency?: string[];
@@ -25,4 +26,5 @@ export interface Answers {
     form: FormOption
     schema: SchemaOption;
     globalState: GlobalStateOption;
+    fonts?: Fonts[];
 }

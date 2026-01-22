@@ -14,6 +14,10 @@ export const tailwindInstaller = {
     dependency: ['tailwindcss', '@tailwindcss/vite'],
 };
 
+export const scssInstaller = {
+    devDependency: ['sass']
+}
+
 // Icons
 export const reactIconsInstaller = {
     dependency: ['react-icons'],
