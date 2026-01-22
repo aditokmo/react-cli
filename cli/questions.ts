@@ -1,5 +1,5 @@
 import { group, text, select, confirm, isCancel, cancel, multiselect } from '@clack/prompts';
-import { Answers, FormOption, GlobalStateOption, IconOption, RouterOption, SchemaOption, ShadcnComponents, StyleOption, ToastOption } from './types.js';
+import { Answers, Fonts, FormOption, GlobalStateOption, IconOption, RouterOption, SchemaOption, ShadcnComponents, StyleOption, ToastOption } from './types.js';
 
 export async function askQuestions(): Promise<Answers> {
     const results = await group(
@@ -15,6 +15,7 @@ export async function askQuestions(): Promise<Answers> {
                 options: [
                     { value: 'tailwind', label: 'Tailwind' },
                     { value: 'css', label: 'CSS' },
+                    { value: 'scss', label: 'SCSS' },
                 ],
             }),
 
@@ -43,6 +44,20 @@ export async function askQuestions(): Promise<Answers> {
                     required: false,
                 });
             },
+
+            fonts: () => multiselect<Fonts>({
+                message: 'Use space to select your fonts',
+                options: [
+                    { value: 'geist', label: 'Geist' },
+                    { value: 'inter', label: 'Inter' },
+                    { value: 'lato', label: 'Lato' },
+                    { value: 'montserrat', label: 'Montserrat' },
+                    { value: 'open-sans', label: 'Open Sans' },
+                    { value: 'poppins', label: 'Poppins' },
+                    { value: 'roboto', label: 'Roboto' }
+                ],
+                required: false
+            }),
 
             icons: () => select<IconOption>({
                 message: 'Choose icon library:',
@@ -110,7 +125,8 @@ export async function askQuestions(): Promise<Answers> {
         isCancel(results.shadcnComponents) ||
         isCancel(results.icons) ||
         isCancel(results.toast) ||
-        isCancel(results.reactQuery)
+        isCancel(results.reactQuery) ||
+        isCancel(results.fonts)
     ) {
         cancel('Setup cancelled.');
         process.exit(0);
@@ -120,5 +136,6 @@ export async function askQuestions(): Promise<Answers> {
         ...results,
         shadcn: results.shadcn as boolean,
         shadcnComponents: (results.shadcnComponents ?? []) as ShadcnComponents[],
+        fonts: (results.fonts ?? []) as Fonts[]
     };
 }

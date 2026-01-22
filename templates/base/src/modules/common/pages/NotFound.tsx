@@ -1,4 +1,4 @@
-import '@/styles/404.css';
+import '@/styles/404.scss';
 
 export const NotFound = () => {
     return (

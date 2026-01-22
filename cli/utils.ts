@@ -8,6 +8,14 @@ export function copyTemplate(src: string, path: string) {
     fs.copySync(src, path, { overwrite: true });
 }
 
+export function patchIndexHTMLFile(filePath: string, importLine: string, newContent: string) {
+    let htmlContent = fs.readFileSync(filePath, 'utf-8');
+
+    htmlContent = htmlContent.replace(importLine, newContent);
+
+    fs.writeFileSync(filePath, htmlContent);
+}
+
 export function patchAppFile(filePath: string, importLine: string, openTag: string, closeTag: string) {
     if (!fs.existsSync(filePath)) return;
     let content = fs.readFileSync(filePath, 'utf-8');

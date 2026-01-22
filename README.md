@@ -42,7 +42,7 @@ yarn dlx @aditokmo/react-setup-cli
 
 ---
 
-## Decisions About Arhitecture
+## About Arhitecture
 
 ### Feature-Based Structure
 

@@ -4,10 +4,11 @@ import fs from 'fs-extra';
 import path from 'path';
 import { execSync } from 'child_process';
 import { askQuestions } from './questions.js';
-import { copyTemplate, patchViteConfig, finalizeViteConfig, patchAppFile, finalizeAppFile, detectPackageManager } from './utils.js';
+import { copyTemplate, patchViteConfig, finalizeViteConfig, patchAppFile, finalizeAppFile, detectPackageManager, patchIndexHTMLFile } from './utils.js';
 import { collectDependencies } from './installers.js';
 import { Answers } from './types.js';
 import { fileURLToPath } from 'url';
+import { FONT_QUERIES } from './mapper.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -27,6 +28,7 @@ async function main() {
         projectDir = path.join(process.cwd(), answers.projectName);
         const templateRoot = path.join(__dirname, '../templates');
         const appFilePath = path.join(projectDir, 'src', 'App.tsx');
+        const indexHTMLPath = path.join(projectDir, 'src', 'index.html');
         const viteConfigPath = path.join(projectDir, 'vite.config.ts');
 
         fs.ensureDirSync(projectDir);
@@ -56,6 +58,35 @@ async function main() {
                 path.join(templateRoot, 'styles', 'css', 'src'),
                 path.join(projectDir, 'src/styles')
             );
+        }
+
+        if (answers.style === 'scss') {
+            copyTemplate(
+                path.join(templateRoot, 'styles', 'scss', 'src'),
+                path.join(projectDir, 'src/styles')
+            );
+
+            patchIndexHTMLFile(path.join(projectDir, 'index.html'), '<link rel="stylesheet" href="./src/styles/main.css" />', '<link rel="stylesheet" href="./src/styles/main.scss" />');
+        }
+
+        // Fonts
+        if (answers?.fonts && answers.fonts.length > 0) {
+            const fontString = answers.fonts
+                .map(name => FONT_QUERIES[name])
+                .join('&');
+
+            const url = `https://fonts.googleapis.com/css2?${fontString}&display=swap`;
+
+            const content = `
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="${url}" rel="stylesheet">`;
+
+            patchIndexHTMLFile(path.join(projectDir, 'index.html'), '<!-- [HEAD_LINK_IMPORT] -->', content);
+        } else {
+            let html = fs.readFileSync(indexHTMLPath, 'utf-8');
+            html = html.replace('', '');
+            fs.writeFileSync(indexHTMLPath, html);
         }
 
         // State Management
