@@ -1,5 +1,5 @@
 {
-  "name": "create-react-project",
+  "name": "@aditokmo/create-react-project",
   "version": "0.1.5",
   "description": "A fast React CLI to jumpstart your projects. It sets up your libraries and organizes a scalable folder structure so you can skip the configuration and go straight to coding.",
   "main": "dist/index.js",
